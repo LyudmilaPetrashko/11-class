@@ -1,3 +1,5 @@
+// из списка рёбер делаем матрицы смежности и инцидентности, а также список связности
+
 #include<iostream>
 #include<vector>
 #include <utility>
