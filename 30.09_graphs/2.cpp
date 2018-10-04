@@ -1,3 +1,6 @@
+// вычисление количества компонент связности
+
+
 #include<iostream>
 #include<vector>
 using namespace std;
