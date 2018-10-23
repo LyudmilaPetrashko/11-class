@@ -10,16 +10,6 @@ int v; // число вершин
 int** g=new int*[v]; // граф
 
 
-void print_matrix_adj(int** n,int k){
-      cout<<"adjacency matrix: "<<endl;
-      for(int i=0; i<k; i++){
-            for(int j=0; j<k; j++){
-                cout<<n[i][j]<<" ";
-            }
-            cout<<endl;
-        }
-}
-
 void dfs(int n, bool* used){
     used[n]=1;
     for(int i=0; i<v; i++){
@@ -30,7 +20,7 @@ void dfs(int n, bool* used){
  }
 }
 
-int number_of_con_com(bool* used){
+int number_of_con_com(bool* used){//подсчет компонент связности
     int t=1;
     for(int j=0; j<v; j++){
         if(used[j]==0){
@@ -42,7 +32,7 @@ int number_of_con_com(bool* used){
 }
 
 
-int chetnosti(int** f, int y){
+int chetnosti(int** f, int y){//подсчет количества вершин с нечетной степенью
         int temp=0, z;
 
         for(int i=0; i<y; i++){
@@ -114,15 +104,9 @@ int main(){
     }
 
     make_matrix_adj( h, g);
-
-    print_matrix_adj(g, v);
     
     dfs(0,us);
      
-    cout<<endl<<number_of_con_com(us);
-
-    cout<<endl<<chetnosti(g,v);
-    cout<<endl;
     el(g,v,us);
 
 
